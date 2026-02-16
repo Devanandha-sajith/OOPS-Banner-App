@@ -1,38 +1,20 @@
+import java.util.Scanner; // New for UC3
 import java.util.HashMap;
 import java.util.Map;
 
 public class OOPSBanner {
     public static void main(String[] args) {
-        // UC2: Call the modular method instead of printing directly
-        printBanner("OOPS");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter text for banner: ");
+        String userInput = scanner.nextLine().toUpperCase();
+        
+        printBanner(userInput); // Now passes whatever the user typed
     }
 
     public static void printBanner(String text) {
-        // Using a Map to store character designs for reusability
-        Map<Character, String[]> alphabet = new HashMap<>();
+        // Your existing HashMap logic from UC2 stays here...
+        // ... (Include your 'alphabet' Map entries here) ...
         
-        alphabet.put('O', new String[]{
-            "  *** ",
-            " * *",
-            " * *",
-            "  *** "
-        });
-
-        alphabet.put('P', new String[]{
-            " **** ",
-            " * *",
-            " **** ",
-            " * "
-        });
-
-        alphabet.put('S', new String[]{
-            "  **** ",
-            " * ",
-            "  *** ",
-            "     * ",
-            " **** "
-        });
-
-        System.out.println("Modular Banner System Initialized for: " + text);
+        System.out.println("Displaying modular banner for: " + text);
     }
 }
